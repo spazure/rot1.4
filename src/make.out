@@ -1,0 +1,589 @@
+gcc -c -Wall -O -g  act_comm.c
+act_comm.c:80:36: error: use of undeclared identifier 'PLAYER_DIR'
+            sprintf( strsave, "%s%s", PLAYER_DIR, capitalize( ch->name ) );
+                                      ^
+act_comm.c:138:36: error: use of undeclared identifier 'PLAYER_DIR'
+            sprintf( strsave, "%s%s", PLAYER_DIR, capitalize( ch->name ) );
+                                      ^
+2 errors generated.
+make: *** [act_comm.o] Error 1
+gcc -c -Wall -O -g  act_info.c
+act_info.c:2717:18: warning: cast to 'struct tm *' from smaller integer type 'int' [-Wint-to-pointer-cast]
+    hour = (int) (struct tm *)localtime(&current_time)->tm_hour;
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+act_info.c:2717:12: warning: cast to smaller integer type 'int' from 'struct tm *' [-Wpointer-to-int-cast]
+    hour = (int) (struct tm *)localtime(&current_time)->tm_hour;
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+act_info.c:2766:18: warning: cast to 'struct tm *' from smaller integer type 'int' [-Wint-to-pointer-cast]
+    hour = (int) (struct tm *)localtime(&current_time)->tm_hour;
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+act_info.c:2766:12: warning: cast to smaller integer type 'int' from 'struct tm *' [-Wpointer-to-int-cast]
+    hour = (int) (struct tm *)localtime(&current_time)->tm_hour;
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+act_info.c:3612:18: error: implicit declaration of function 'crypt' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+    if ( strcmp( crypt( arg1, ch->pcdata->pwd ), ch->pcdata->pwd ) )
+                 ^
+act_info.c:3612:18: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *' [-Wint-conversion]
+    if ( strcmp( crypt( arg1, ch->pcdata->pwd ), ch->pcdata->pwd ) )
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/string.h:77:25: note: passing argument to parameter '__s1' here
+int      strcmp(const char *__s1, const char *__s2);
+                            ^
+act_info.c:3629:12: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int' [-Wint-conversion]
+    pwdnew = crypt( arg2, ch->name );
+           ^ ~~~~~~~~~~~~~~~~~~~~~~~
+6 warnings and 1 error generated.
+make: *** [act_info.o] Error 1
+gcc -c -Wall -O -g  ban.c
+ban.c:73:25: error: use of undeclared identifier 'NULL_FILE'
+     fpReserve = fopen( NULL_FILE, "r" );
+                        ^
+1 error generated.
+make: *** [ban.o] Error 1
+gcc -c -Wall -O -g  clans.c
+clans.c:738:24: error: use of undeclared identifier 'NULL_FILE'
+    fpReserve = fopen( NULL_FILE, "r" );
+                       ^
+1 error generated.
+make: *** [clans.o] Error 1
+gcc -c -Wall -O -g  comm.c
+comm.c:396:31: error: use of undeclared identifier 'NULL_FILE'
+    if ( ( fpReserve = fopen( NULL_FILE, "r" ) ) == NULL )
+                              ^
+comm.c:398:10: error: use of undeclared identifier 'NULL_FILE'
+        perror( NULL_FILE );
+                ^
+comm.c:1392:5: error: implicit declaration of function 'close' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+    close( dclose->descriptor );
+    ^
+comm.c:1416:2: error: implicit declaration of function 'write_to_descriptor' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        write_to_descriptor( d->descriptor,
+        ^
+comm.c:1416:2: note: did you mean 'free_descriptor'?
+./recycle.h:81:6: note: 'free_descriptor' declared here
+void    free_descriptor args( (DESCRIPTOR_DATA *d) );
+        ^
+comm.c:1501:6: error: implicit declaration of function 'write_to_descriptor' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+            write_to_descriptor( d->descriptor, "Line too long.\n\r", 0 );
+            ^
+comm.c:1564:17: error: implicit declaration of function 'write_to_descriptor' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                write_to_descriptor( d->descriptor,
+                ^
+comm.c:1569:3: error: implicit declaration of function 'write_to_descriptor' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                write_to_descriptor( d->descriptor,
+                ^
+comm.c:1706:24: error: use of undeclared identifier 'go_ahead_str'
+            write_to_buffer(d,go_ahead_str,0);
+                              ^
+comm.c:1729:11: error: implicit declaration of function 'write_to_descriptor' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+    if ( !write_to_descriptor( d->descriptor, d->outbuf, d->outtop ) )
+          ^
+comm.c:1759:9: warning: comparison of array 'buf2' equal to a null pointer is always false [-Wtautological-pointer-compare]
+    if (buf2 == NULL || buf2[0] == '\0')
+        ^~~~    ~~~~
+comm.c:1937:6: error: conflicting types for 'write_to_descriptor'
+bool write_to_descriptor( int desc, char *txt, int length )
+     ^
+comm.c:1416:2: note: previous implicit declaration is here
+        write_to_descriptor( d->descriptor,
+        ^
+comm.c:1954:18: error: implicit declaration of function 'write' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        if ( ( nWrite = write( desc, txt + iStart, nBlock ) ) < 0 )
+                        ^
+comm.c:1954:18: note: did you mean 'fwrite'?
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:165:9: note: 'fwrite' declared here
+size_t   fwrite(const void * __restrict __ptr, size_t __size, size_t __nitems, FILE * __restrict __stream) __DARWIN_ALIAS(fwrite);
+         ^
+comm.c:2063:26: error: use of undeclared identifier 'echo_off_str'
+            write_to_buffer( d, echo_off_str, 0 );
+                                ^
+comm.c:2097:15: error: implicit declaration of function 'crypt' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        if ( strcmp( crypt( argument, ch->pcdata->pwd ), ch->pcdata->pwd ))
+                     ^
+comm.c:2097:15: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *' [-Wint-conversion]
+        if ( strcmp( crypt( argument, ch->pcdata->pwd ), ch->pcdata->pwd ))
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/string.h:77:25: note: passing argument to parameter '__s1' here
+int      strcmp(const char *__s1, const char *__s2);
+                            ^
+comm.c:2104:22: error: use of undeclared identifier 'echo_on_str'
+        write_to_buffer( d, echo_on_str, 0 );
+                            ^
+comm.c:2120:36: error: use of undeclared identifier 'PLAYER_DIR'
+            sprintf( strsave, "%s%s", PLAYER_DIR, capitalize( ch->name ) );
+                                      ^
+comm.c:2132:26: error: use of undeclared identifier 'echo_on_str'
+            write_to_buffer( d, echo_on_str, 0 );
+                                ^
+comm.c:2227:13: error: use of undeclared identifier 'echo_off_str'
+                ch->name, echo_off_str );
+                          ^
+comm.c:2259:9: warning: incompatible integer to pointer conversion assigning to 'char *' from 'int' [-Wint-conversion]
+        pwdnew = crypt( argument, ch->name );
+               ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+comm.c:2282:15: warning: incompatible integer to pointer conversion passing 'int' to parameter of type 'const char *' [-Wint-conversion]
+        if ( strcmp( crypt( argument, ch->pcdata->pwd ), ch->pcdata->pwd ) )
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/string.h:77:25: note: passing argument to parameter '__s1' here
+int      strcmp(const char *__s1, const char *__s2);
+                            ^
+comm.c:2291:22: error: use of undeclared identifier 'echo_on_str'
+        write_to_buffer( d, echo_on_str, 0 );
+                            ^
+comm.c:2392:22: error: use of undeclared identifier 'echo_on_str'
+        write_to_buffer( d, echo_on_str, 0 );
+                            ^
+comm.c:3072:56: warning: for loop has empty body [-Wempty-body]
+            for (chk = d->showstr_point; isspace(*chk); chk++);
+                                                              ^
+comm.c:3072:56: note: put the semicolon on a separate line to silence this warning
+comm.c:3368:22: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+            sprintf(clcode, colour_clear( ch ));
+                            ^~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3368:22: note: treat the string as an argument to avoid this
+            sprintf(clcode, colour_clear( ch ));
+                            ^
+                            "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3371:22: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+            sprintf(clcode, colour_clear( ch ));
+                            ^~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3371:22: note: treat the string as an argument to avoid this
+            sprintf(clcode, colour_clear( ch ));
+                            ^
+                            "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3374:22: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+            sprintf(clcode, colour_clear( ch ));
+                            ^~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3374:22: note: treat the string as an argument to avoid this
+            sprintf(clcode, colour_clear( ch ));
+                            ^
+                            "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3476:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_auc, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3476:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_auc, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3486:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_cgo, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3486:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_cgo, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3496:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_cla, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3496:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_cla, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3506:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_gos, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3506:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_gos, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3516:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_gra, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3516:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_gra, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3526:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_gte, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3526:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_gte, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3536:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_imm, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3536:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_imm, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3546:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_mus, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3546:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_mus, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3556:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_que, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3556:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_que, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3566:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_quo, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3566:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_quo, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3576:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_say, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3576:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_say, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3586:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_sho, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3586:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_sho, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3596:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_tel, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3596:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_tel, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3606:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_wiz, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3606:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_wiz, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3616:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_mob, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3616:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_mob, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3626:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_roo, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3626:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_roo, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3636:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_con, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3636:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_con, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3646:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_fig, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3646:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_fig, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3656:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_opp, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3656:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_opp, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3666:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_dis, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3666:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_dis, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3676:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_wit, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3676:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_wit, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3680:20: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_clear( ch ));
+                                 ^~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3680:20: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_clear( ch ));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3686:34: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                sprintf( clcode, colour_channel(ch->color_qgo, ch));
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3686:34: note: treat the string as an argument to avoid this
+                sprintf( clcode, colour_channel(ch->color_qgo, ch));
+                                 ^
+                                 "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+comm.c:3784:19: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+        sprintf( clcode, colour_clear( ch ));
+                         ^~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+comm.c:3784:19: note: treat the string as an argument to avoid this
+        sprintf( clcode, colour_clear( ch ));
+                         ^
+                         "%s", 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro 'sprintf'
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+32 warnings and 19 errors generated.
+make: *** [comm.o] Error 1
+gcc -c -Wall -O -g  db.c
+db.c:568:15: warning: variable 'fMatch' set but not used [-Wunused-but-set-variable]
+    bool      fMatch;
+              ^
+db.c:3338:17: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+        top_mob_index, top_mob_index * (sizeof(*pMobIndex))); 
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+db.c:3354:9: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+        count, count * (sizeof(*fch)), count2, count2 * (sizeof(*fch)));
+               ^~~~~~~~~~~~~~~~~~~~~~
+db.c:3354:41: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+        count, count * (sizeof(*fch)), count2, count2 * (sizeof(*fch)));
+                                               ^~~~~~~~~~~~~~~~~~~~~~~
+db.c:3362:11: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+        num_pcs, num_pcs * (sizeof(*pc)), count, count * (sizeof(*pc)));
+                 ^~~~~~~~~~~~~~~~~~~~~~~
+db.c:3362:43: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+        num_pcs, num_pcs * (sizeof(*pc)), count, count * (sizeof(*pc)));
+                                                 ^~~~~~~~~~~~~~~~~~~~~
+db.c:3372:9: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+        count, count * (sizeof(*d)), count2, count2 * (sizeof(*d)));
+               ^~~~~~~~~~~~~~~~~~~~
+db.c:3372:39: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+        count, count * (sizeof(*d)), count2, count2 * (sizeof(*d)));
+                                             ^~~~~~~~~~~~~~~~~~~~~
+db.c:3384:17: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+        top_obj_index, top_obj_index * (sizeof(*pObjIndex)));
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+db.c:3399:9: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+        count, count * (sizeof(*obj)), count2, count2 * (sizeof(*obj)));
+               ^~~~~~~~~~~~~~~~~~~~~~
+db.c:3399:41: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+        count, count * (sizeof(*obj)), count2, count2 * (sizeof(*obj)));
+                                               ^~~~~~~~~~~~~~~~~~~~~~~
+db.c:3407:13: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+        aff_count, aff_count * (sizeof(*af)) ,count, count * (sizeof(*af)));
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~
+db.c:3407:47: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+        aff_count, aff_count * (sizeof(*af)) ,count, count * (sizeof(*af)));
+                                                     ^~~~~~~~~~~~~~~~~~~~~
+db.c:3411:12: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+        top_room, top_room * (sizeof(*room)));
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+db.c:3415:12: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+        top_exit, top_exit * (sizeof(*exit)));
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+db.c:3452:24: error: use of undeclared identifier 'NULL_FILE'
+    fpReserve = fopen( NULL_FILE, "r" );
+                       ^
+db.c:3976:24: error: use of undeclared identifier 'NULL_FILE'
+    fpReserve = fopen( NULL_FILE, "r" );
+                       ^
+15 warnings and 2 errors generated.
+make: *** [db.o] Error 1
+gcc -c -Wall -O -g  finger.c
+finger.c:85:27: error: use of undeclared identifier 'PLAYER_DIR'
+    sprintf( buf, "%s%s", PLAYER_DIR, capitalize( arg ) );
+                          ^
+1 error generated.
+make: *** [finger.o] Error 1
+gcc -c -Wall -O -g  note.c
+note.c:220:21: error: use of undeclared identifier 'NULL_FILE'
+        fpReserve = fopen( NULL_FILE, "r" );
+                           ^
+note.c:374:24: error: use of undeclared identifier 'NULL_FILE'
+    fpReserve = fopen( NULL_FILE, "r" );
+                       ^
+2 errors generated.
+make: *** [note.o] Error 1
+gcc -c -Wall -O -g  save.c
+save.c:43:10: fatal error: 'malloc.h' file not found
+#include <malloc.h>
+         ^~~~~~~~~~
+1 error generated.
+make: *** [save.o] Error 1
+gcc -c -Wall -O -g  wizlist.c
+wizlist.c:88:25: error: use of undeclared identifier 'NULL_FILE'
+     fpReserve = fopen( NULL_FILE, "r" );
+                        ^
+1 error generated.
+make: *** [wizlist.o] Error 1
+gcc -c -Wall -O -g  olc_save.c
+olc_save.c:57:16: warning: expression which evaluates to zero treated as a null pointer constant of type 'char *' [-Wnon-literal-null-conversion]
+        return '\0';
+               ^~~~
+olc_save.c:704:21: warning: variable 'pLastObj' set but not used [-Wunused-but-set-variable]
+    OBJ_INDEX_DATA *pLastObj;
+                    ^
+olc_save.c:946:24: error: use of undeclared identifier 'NULL_FILE'
+    fpReserve = fopen( NULL_FILE, "r" );
+                       ^
+olc_save.c:960:11: warning: variable 'fp' set but not used [-Wunused-but-set-variable]
+    FILE *fp;
+          ^
+3 warnings and 1 error generated.
+make: *** [olc_save.o] Error 1
+make: Target `all' not remade because of errors.
